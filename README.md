@@ -10,6 +10,8 @@
 ioBroker adapter to control FS20, Max!, HMS and other devices via [CUL](http://busware.de/tiki-index.php?page=CUL) /
 [culfw](http://culfw.de). Depends on https://github.com/hobbyquaker/cul
 
+**This adapter uses Sentry libraries to automatically report exceptions and code errors to the developers.** For more details and for information how to disable the error reporting see [Sentry-Plugin Documentation](https://github.com/ioBroker/plugin-sentry#plugin-sentry)! Sentry reporting is used starting with js-controller 3.0.
+
 ## Supported devices
 
 - *EM* - EM1000WZ, EMWZ
@@ -24,10 +26,27 @@ ioBroker adapter to control FS20, Max!, HMS and other devices via [CUL](http://b
 ```sendTo("cul.0", "send", {"protocol":"FS20", "housecode":"A1B2", "address":"01", "command":"00"});```
 
 This command uses the CUL Library of this adapter to send the command to a FS20 Device.
+Javascript/Node.js based Busware CUL USB / culfw adapter
 
 ## Changelog
-### 1.1.1 (2020-02-10)
+
+### 1.3.1 (2020-07-26)
+* (Apollon77) make sure connection check do not crash adapter (Sentry IOBROKER-CUL-3)
+* (Apollon77) crashes preventd (Sentry IOBROKER-CUL-5, IOBROKER-CUL-8)
+
+### 1.3.0 (2020-07-20)
+* (Apollon77) Really update dependencies and Serialport
+
+### 1.2.2 (2020-04-30)
+* (Apollon77) Update dependencies/Serialport 
+
+### 1.2.1 (2020-03-18)
+* (bluefox) Changed license from non SPDX conform 
+    "GPL-2.0" to "GPL-2.0-or-later"
+
+### 1.2.0 (2020-02-10)
 * (MK-2001) Sending of FS20 cmdRAW possible or via sendTo as described in the readme
+* (Bluefox) Refactoring
 
 ### 1.1.0 (2020-01-04)
 * (foxriver76) removed usage of adapter.objects
